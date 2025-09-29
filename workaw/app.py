@@ -120,7 +120,7 @@ if "search_history" not in st.session_state:
 
 # Sidebar: Image + Clear History + Search History
 with st.sidebar:
-    st.image("LOGO-03-01.png", caption="OOP BOTCHAT")
+    st.image("LOGO-03-01.png")
 
     st.markdown("---")
     st.markdown("### ⚙️ การจัดการแชท")
