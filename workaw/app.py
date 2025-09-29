@@ -95,7 +95,7 @@ st.markdown(
 )
 
 # Load Excel
-file_path = "C:/Users/User/Downloads/workaw_chatbot/workaw_chatbot/workaw/workaw_data.xlsx"
+df = pd.read_excel("workaw/workaw_data.xlsx")
 try:
     df = pd.read_excel(file_path)
     excel_context = (
