@@ -4,6 +4,7 @@ import google.generativeai as genai
 from prompt import PROMPT_WORKAW
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from datetime import datetime  # << เพิ่มเพื่อเก็บเวลาค้นหา
+from pathlib import Path
 
 # --- ตั้งค่า API และ Model เหมือนเดิม ---
 genai.configure(api_key="AIzaSyB-MO6y9Nm-NwnRNFRkILWB6fbBw59U29s")
@@ -93,6 +94,9 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+base_dir = Path.cwd()   # โฟลเดอร์ที่ streamlit รันอยู่
+logo_path = base_dir / "workaw" / "LOGO-03-01.png"
 try:
     df = pd.read_excel("workaw/workaw_data.xlsx")
     excel_context = (
@@ -120,7 +124,7 @@ if "search_history" not in st.session_state:
 
 # Sidebar: Image + Clear History + Search History
 with st.sidebar:
-    st.image("LOGO-03-01.png")
+    st.image(str(logo_path), caption="OOP BOTCHAT")
 
     st.markdown("---")
     st.markdown("### ⚙️ การจัดการแชท")
