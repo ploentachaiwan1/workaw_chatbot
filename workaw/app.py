@@ -93,9 +93,10 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+base_dir = Path(__file__).resolve().parent  
 
 # Load Excel
-df = pd.read_excel("workaw/workaw_data.xlsx")
+file_path = base_dir / "workaw" / "workaw_data.xlsx"
 try:
     df = pd.read_excel(file_path)
     excel_context = (
